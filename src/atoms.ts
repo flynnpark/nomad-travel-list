@@ -1,4 +1,7 @@
 import { atom, selector } from 'recoil';
+import { recoilPersist } from 'recoil-persist';
+
+const { persistAtom } = recoilPersist();
 
 export const categories = [
   { id: 'wantToGo', name: '내가 가고싶은 나라들' },
@@ -17,6 +20,7 @@ export interface CountryItemType {
 export const countriesState = atom<CountryItemType[]>({
   key: 'countries',
   default: [],
+  effects_UNSTABLE: [persistAtom],
 });
 
 export const countriesSelector = selector({
