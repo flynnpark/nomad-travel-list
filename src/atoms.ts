@@ -9,15 +9,15 @@ export const categories = [
   { id: 'favorite', name: '내가 좋아하는 나라들' },
 ] as const;
 
-export type CategoryIdType = (typeof categories)[number]['id'];
+export type CategoryID = (typeof categories)[number]['id'];
 
-export interface CountryItemType {
+export interface Country {
   id: number;
   name: string;
-  category: CategoryIdType;
+  category: CategoryID;
 }
 
-export const countriesState = atom<CountryItemType[]>({
+export const countriesState = atom<Country[]>({
   key: 'countries',
   default: [],
   effects_UNSTABLE: [persistAtom],
@@ -28,7 +28,7 @@ export const countriesSelector = selector({
   get: ({ get }) => {
     const countries = get(countriesState);
     return categories.map((category) => ({
-      category,
+      ...category,
       countries: countries.filter((country) => country.category === category.id),
     }));
   },

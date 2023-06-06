@@ -1,14 +1,14 @@
 import { useSetRecoilState } from 'recoil';
 
-import { CategoryIdType, countriesState, CountryItemType } from '../atoms';
+import { CategoryID, countriesState, Country } from '../atoms';
 
 function useActions() {
   const setCountries = useSetRecoilState(countriesState);
 
-  const handleChangeCategory = (id: number, category: CategoryIdType) => () => {
+  const handleChangeCategory = (id: number, category: CategoryID) => () => {
     setCountries((prevCountries) => {
       const currentIndex = prevCountries.findIndex((country) => country.id === id);
-      const newCountry: CountryItemType = { ...prevCountries[currentIndex], category };
+      const newCountry: Country = { ...prevCountries[currentIndex], category };
       return [...prevCountries.slice(0, currentIndex), newCountry, ...prevCountries.slice(currentIndex + 1)];
     });
   };

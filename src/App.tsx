@@ -11,9 +11,9 @@ function App() {
   return (
     <>
       {datas.map((section) => (
-        <Fragment key={section.category.id}>
-          <h1>{section.category.name}</h1>
-          {section.category.id === 'wantToGo' && <InputForm />}
+        <Fragment key={section.id}>
+          <h1>{section.name}</h1>
+          {section.id === 'wantToGo' && <InputForm />}
           <ul>
             {section.countries.map((country) => (
               <ListItem key={country.id} country={country} />

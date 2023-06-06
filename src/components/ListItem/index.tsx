@@ -1,8 +1,8 @@
-import { CountryItemType } from '../../atoms';
+import { Country } from '../../atoms';
 import Actions from './Actions';
 
 interface ListItemProps {
-  country: CountryItemType;
+  country: Country;
 }
 
 function ListItem({ country }: ListItemProps) {

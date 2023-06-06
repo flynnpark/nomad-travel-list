@@ -1,8 +1,11 @@
 import { SVGProps } from 'react';
 
+import { DEFAULT_SVG_SIZE } from '../utils/constants';
+
 type IconProps = SVGProps<SVGSVGElement>;
 
 export function TrashIcon(props: IconProps) {
+  const { width, height, ...rest } = props;
   return (
     <svg
       fill="none"
@@ -11,7 +14,9 @@ export function TrashIcon(props: IconProps) {
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
-      {...props}
+      width={width || DEFAULT_SVG_SIZE}
+      height={height || DEFAULT_SVG_SIZE}
+      {...rest}
     >
       <path
         strokeLinecap="round"
@@ -23,6 +28,7 @@ export function TrashIcon(props: IconProps) {
 }
 
 export function CheckIcon(props: IconProps) {
+  const { width, height, ...rest } = props;
   return (
     <svg
       fill="none"
@@ -31,7 +37,9 @@ export function CheckIcon(props: IconProps) {
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
-      {...props}
+      width={width || DEFAULT_SVG_SIZE}
+      height={height || DEFAULT_SVG_SIZE}
+      {...rest}
     >
       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
     </svg>
@@ -39,6 +47,7 @@ export function CheckIcon(props: IconProps) {
 }
 
 export function HandThumbUpIcon(props: IconProps) {
+  const { width, height, ...rest } = props;
   return (
     <svg
       fill="none"
@@ -47,7 +56,9 @@ export function HandThumbUpIcon(props: IconProps) {
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
-      {...props}
+      width={width || DEFAULT_SVG_SIZE}
+      height={height || DEFAULT_SVG_SIZE}
+      {...rest}
     >
       <path
         strokeLinecap="round"
@@ -59,6 +70,7 @@ export function HandThumbUpIcon(props: IconProps) {
 }
 
 export function NoSymbolIcon(props: IconProps) {
+  const { width, height, ...rest } = props;
   return (
     <svg
       fill="none"
@@ -67,7 +79,9 @@ export function NoSymbolIcon(props: IconProps) {
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
-      {...props}
+      width={width || DEFAULT_SVG_SIZE}
+      height={height || DEFAULT_SVG_SIZE}
+      {...rest}
     >
       <path
         strokeLinecap="round"
@@ -79,6 +93,7 @@ export function NoSymbolIcon(props: IconProps) {
 }
 
 export function HandThumbDownIcon(props: IconProps) {
+  const { width, height, ...rest } = props;
   return (
     <svg
       fill="none"
@@ -87,7 +102,9 @@ export function HandThumbDownIcon(props: IconProps) {
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
-      {...props}
+      width={width || DEFAULT_SVG_SIZE}
+      height={height || DEFAULT_SVG_SIZE}
+      {...rest}
     >
       <path
         strokeLinecap="round"
